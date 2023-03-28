@@ -5,6 +5,7 @@ import {createStore} from 'redux';
 import App from './components/App';
 import movies from './reducers';
 
+
 const store  = createStore(movies);
 console.log('store', store)
 // console.log('BEFORE state', store.getState());
