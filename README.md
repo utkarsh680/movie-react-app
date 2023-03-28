@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-<h1>jab tak todenge nahi tab tak chhodenge nahi</h1>
+<h1 style = "font-size:100px">jab tak todenge nahi tab tak chhodenge nahi &#129311;</h1>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
