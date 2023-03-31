@@ -1,12 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import {createStore} from 'redux';
+import {createStore, applyMiddleware} from 'redux';
 import App from './components/App';
 import rootReducer from './reducers';
 
+//first way right reducer
+//function logger (obj, next, action) is is currying function
+//logger(obj)(next)(action)
+//*************************************************************** */
+// const logger = function ({dispatch, getState}){
+//   return function (next){
+//     return function (action){
+//       //middleware code
+//       console.log('ACTION_TYPE', action.type);
+//       next(action);
+//     }
+//   }
+// }
+//*************************************************************** */
+//second way right reducer
+const logger = ({dispatch, getState}) => (next) => (action) => {
+  //middleware code
+  console.log('ACTION_TYPE', action.type);
+  next(action);    
+}
 
-const store  = createStore(rootReducer);
+const store  = createStore(rootReducer, applyMiddleware(logger));
 console.log('store', store)
 // console.log('BEFORE state', store.getState());
 
@@ -15,7 +35,6 @@ console.log('store', store)
 //   movies:[{name:'Superman'}]
 // })
 // console.log('After state', store.getState());
-
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
