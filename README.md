@@ -2,6 +2,8 @@
 
 <h1 style= "font-size:100px;">jab tak todenge nahi tab tak chhodenge nahi &#129311;</h1>
 
+click kro bro copy kiya hu -> https://movie-react-api-web.netlify.app/
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
